@@ -1,0 +1,14 @@
+class Solution:
+    def minimumDifference(self, nums: List[int], k: int) -> int:
+        l,r=0,k-1
+
+        nums.sort()
+        res=nums[r] -nums[l]
+
+        for i in range(len(nums)-k+1):
+
+            res=min(res,nums[i+k-1]-nums[i])
+
+
+        return res
+    
